@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import Section from './Section'
 import Layout from './Layout'
 import { sections } from './sections'
+import type { SectionData } from './sections'
 
 export default function LandingPage() {
   const [activeSection, setActiveSection] = useState(0)
@@ -62,7 +63,7 @@ export default function LandingPage() {
         ref={containerRef}
         className="h-full overflow-y-auto snap-y snap-mandatory"
       >
-        {sections.map((section, index) => (
+        {sections.map((section: SectionData, index: number) => (
           <Section
             key={section.id}
             {...section}
